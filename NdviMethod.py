@@ -23,22 +23,10 @@ def calculate_vegetation_percentage(image_path):
     total_pixels = image.shape[0] * image.shape[1]
     vegetation_percentage = (vegetation_pixels / total_pixels) * 100
 
-    return vegetation_percentage, mask
+    return vegetation_percentage
 
 # Use ndvi image
 image_path = "Delhi.jpg"
-vegetation_percentage, mask = calculate_vegetation_percentage(image_path)
+vegetation_percentage = calculate_vegetation_percentage(image_path)
 
 print(f'Vegetation cover: {vegetation_percentage:.2f}%')
-
-# Display the original image and the mask
-plt.figure(figsize=(10, 5))
-plt.subplot(1, 2, 1)
-plt.title('Original Image')
-plt.imshow(cv2.cvtColor(cv2.imread(image_path), cv2.COLOR_BGR2RGB))
-
-plt.subplot(1, 2, 2)
-plt.title('Vegetation Mask')
-plt.imshow(mask, cmap='RdYlGn')
-
-plt.show()
