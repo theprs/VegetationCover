@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 
 def calculate_vegetation_percentage(image_path):
     # Read the image
